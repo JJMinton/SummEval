@@ -2181,7 +2181,7 @@ torch = ["torch (>=1.10)"]
 name = "scikit-learn"
 version = "1.3.0"
 description = "A set of python modules for machine learning and data mining"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -2582,7 +2582,7 @@ torch = ["torch (>=1.6.0)"]
 name = "threadpoolctl"
 version = "3.2.0"
 description = "threadpoolctl"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
@@ -2897,7 +2897,7 @@ test = ["pytest (>=6.0.0)", "setuptools (>=65)"]
 [[package]]
 name = "wmd"
 version = "1.3.2"
-description = ""
+description = "Accelerated functions to calculate Word Mover's Distance"
 category = "main"
 optional = false
 python-versions = "*"
@@ -2910,8 +2910,8 @@ numpy = "*"
 [package.source]
 type = "git"
 url = "https://github.com/src-d/wmd-relax.git"
-reference = "0d3b4cacf1ce860f068723dd3ef830d6ba8e7401"
-resolved_reference = "0d3b4cacf1ce860f068723dd3ef830d6ba8e7401"
+reference = "HEAD"
+resolved_reference = "72a579bd1e10aaefd5eb39852e2ef89772c2eb6e"
 
 [[package]]
 name = "zipp"
@@ -2932,4 +2932,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "8b6fd5faf8aed5ea74b5d10ebfd756f09ed7b51030fbe2322904ecbd19bac546"
+content-hash = "cc36fde4ff67d25fec1595188236806c9294ca3a2ce4349d917979dc6ac36f67"
