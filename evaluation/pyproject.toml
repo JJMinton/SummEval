@@ -7,12 +7,13 @@ license = "MIT"
 readme = "../README.md"
 packages = [{include = "summ_eval"}]
 
+
+[tool.poetry.group.dev]
+optional = true
+
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
 
-
-[tool.poetry.group.perl-rouge.dependencies]
-pyrouge = {git = "https://github.com/bheinzerling/pyrouge.git"}
 
 [tool.project.urls]
 home = "https://github.com/Yale-LILY/SummEval"
@@ -41,6 +42,11 @@ networkx = "^3.1"
 blanc = "^0.3.3"
 wmd = {git = "https://github.com/src-d/wmd-relax.git"} # Update to >1.3.2 when available
 scikit-learn = "^1.3.0"
+pyrouge = {git = "https://github.com/bheinzerling/pyrouge.git", optional = true}
+
+
+[tool.poetry.extras]
+rouge = [ "pyrouge" ]
 
 
 [tool.poetry.scripts]
