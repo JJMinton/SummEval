@@ -72,15 +72,40 @@ apt-get install libxml-parser-perl
 ```
 in ubuntu systems, at least.
 
-Finally, the `pyrouge` python package is required. This can be installed manualy
-or with the `summ-eval[perl-rouge]` extra.
+Finally, the `pyrouge` python package is required. This can be installed manually
+or with the `summ-eval[rouge]` extra.
 
 
 ### S3; Sentence Mover's Similarity and Supert
-These packages all require NLTK's `stopwords` corpus. This can be installed with
+These metrics all require NLTK's `stopwords` corpus. This can be installed with
 ```bash
 python -m nltk.downloader stopwords
 ```
+
+### Supert
+Supert requires NLTK's `punkt` tokenizer. This can be installed with
+```bash
+python -m nltk.downloader tokenizer
+```
+
+Additionally, this metric the `sentence_transformers` folder to be findable by importlib.
+To do this, `./evaluation/summ_eval/` must be added to the python path.
+This can be done either manually with `export PYTHONPATH=$PYTHONPATH:./evaluation/summ_eval/` or
+will be done automatically when `summ_eval.supert_metric` is imported.
+
+### Meteor
+This implementation is in java so requires the java run time environment.
+This can be installed with
+```bash
+apt-get install default-jre
+```
+
+### Blanc; Mover score
+As currently implemented, these metrics require CUDA acceleration.
+This will require cuda to be installed, which can be confirmed by successfully running `nvidia-smi` and having
+the appropriate GPU reported.
+
+Installation instructions are provided by [NVidia](https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html).
 
 ## Usage
 
