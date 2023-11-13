@@ -8,6 +8,7 @@ import logging
 import gin
 import sys
 
+from summ_eval  import logger
 from summ_eval.sentence_transformers import SentenceTransformer
 from summ_eval.metric import Metric
 from summ_eval.supert_utils import (
@@ -19,7 +20,7 @@ from summ_eval.supert_utils import (
 )
 
 
-logger = logging.getLogger(__name__)
+logger = logger.getChild(__name__)
 
 try:
     PYTHONPATH = os.environ['PYTHONPATH']

@@ -2,12 +2,13 @@
 from collections import Counter
 from multiprocessing import Pool
 import gin
-import logging
 import spacy
+
+from summ_eval import logger
 from summ_eval.data_stats_utils import Fragments
 from summ_eval.metric import Metric
 
-logger = logging.getLogger(__name__)
+logger = logger.getChild(__name__)
 
 try:
     _en = spacy.load('en_core_web_sm')

@@ -5,15 +5,20 @@ from collections import Counter
 from multiprocessing import Pool
 import gin
 import bz2
+
+from summ_eval import logger
 from summ_eval.metric import Metric
 from summ_eval.s3_utils import S3, load_embeddings
 
+
 dirname = os.path.dirname(__file__)
+logger = logger.getChild(__name__)
+
 
 if not os.path.exists(os.path.join(dirname, "embeddings")):
     os.mkdir(os.path.join(dirname, "embeddings"))
 if not os.path.exists(os.path.join(dirname, "embeddings/deps.words")):
-    print("Downloading the embeddings; this may take a while")
+    logger.info("Downloading the embeddings; this may take a while")
     url = "https://github.com/JJMinton/s3_embedding/raw/main/deps.words.bz2?download="  # TODO: upload this file to git for more reliable access
     r = requests.get(url)
     d = bz2.decompress(r.content)
